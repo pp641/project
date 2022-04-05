@@ -1,0 +1,25 @@
+{
+  "name": "help-for-geeks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "go": "nodemon get.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "cheerio": "^1.0.0-rc.10",
+    "child_process": "^1.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.9",
+    "nodemon": "^2.0.15",
+    "puppeteer": "^13.5.2",
+    "request": "^2.88.2"
+  }
+}
