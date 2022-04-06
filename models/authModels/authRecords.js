@@ -40,15 +40,15 @@ const loginIntoAccount = async (req, res) => {
 const createNewAccount = (req, res) => {
   console.log(req.body);
 
-  UserSchema.findOne({ email: req.body.data.email }).then((user) => {
+  UserSchema.findOne({ email: req.body.email }).then((user) => {
     if (user) {
       return res.status(400).json({ email: "Email already exists" });
     } else {
       console.log("getting");
       const newUser = new UserSchema({
-        name: req.body.data.name,
-        email: req.body.data.email,
-        password: req.body.data.password,
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
       });
       bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
