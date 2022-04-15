@@ -76,7 +76,7 @@ const sendLikeStatus = (req, res) => {
         },
       }
     )
-      .then(async(user) => {
+      .then(async (user) => {
         res.json(user);
       })
       .catch((err) => {
@@ -103,7 +103,7 @@ const sendLikeStatus = (req, res) => {
 
 const getCurrentUser = async (req, res) => {
   console.log("curent", req.body);
-  await UserSchema.find({ email: req.body.email })
+  await UserSchema.find({ email: req.body.data })
     .then((response) => {
       res.json(response);
     })

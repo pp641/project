@@ -73,8 +73,9 @@ const getRecordsByAllFilterOperations = (req, res) => {
     batchWiseFilterQuery,
     { $limit: 90 },
   ])
-    .then(async (records) => {
-      await res.json(records);
+    .then((records) => {
+      console.log("these", records);
+      res.json({ records: records, totalPages: 40000 });
     })
     .catch((err) => {
       res.json({ message: "Error", type: err });

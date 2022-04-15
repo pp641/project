@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 const router = require("./Routes/routes");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-mongoose.connect("mongodb://localhost/gfg");
+mongoose.connect("mongodb://localhost:27017/gfg");
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function callback() {
