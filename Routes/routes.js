@@ -3,9 +3,15 @@ const router = express.Router();
 
 const { serve } = require("../models/allDetailsModels/fetchScrappedRecord");
 const {
+  getAllSavedRecordUserWise,
+} = require("../models/allDetailsModels/getAllSavedRecordUserWise");
+const {
   hasUserMarkedCurrentRecord,
 } = require("../models/allDetailsModels/getRecordsByAllFilterOperations");
 const { getCurrentUser } = require("../models/authModels/authRecords");
+const {
+  removeCurrentFavouritePost,
+} = require("../models/authModels/removeCurrentFavPost");
 const loginIntoAccount =
   require("../models/authModels/authRecords").loginIntoAccount;
 const getRecordsCount =
@@ -32,4 +38,6 @@ router.post("/loginAccount", loginIntoAccount);
 router.post("/hasUserMarked", hasUserMarkedCurrentRecord);
 router.get("/userDetails", getDetails);
 router.post("/getCurrentPost", serve);
+router.post("/getAllSavedRecordUserWise", getAllSavedRecordUserWise);
+router.patch("/removeCurrentFavPost", removeCurrentFavouritePost);
 module.exports = router;
